@@ -3030,9 +3030,9 @@ a.bb {
 }
 
 .register-brand {
-    background: linear-gradient(360deg, #BC339E 0%, rgba(220, 112, 107, 0.7) 45.83%, rgba(223, 153, 17, 0.85) 97.85%), #D18411;
+    background-color: #D18411;
     width: 450px;
-    background-image: url(../img/Hiasan.svg);
+    background-image: url(../img/Hiasan.svg), linear-gradient(360deg, #BC339E 0%, rgba(220, 112, 107, 0.7) 45.83%, rgba(223, 153, 17, 0.85) 97.85%);
     background-size: cover;
     background-position: center;
     padding-top: 250px;
