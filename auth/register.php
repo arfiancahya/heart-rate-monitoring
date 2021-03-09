@@ -20,8 +20,9 @@
     include 'connect.php';
     if (isset($_POST['submit'])) {
         $username = stripslashes($_POST['username']);
-        //escapes special characters in a string
         $username = mysqli_real_escape_string($conn, $username); 
+        $email = stripslashes($_POST['email']);
+        $email = mysqli_real_escape_string($conn, $email); 
         $password = stripslashes($_POST['password']);
         $password = mysqli_real_escape_string($conn, $password);
         $nama     = stripslashes($_POST['nama']);
@@ -40,7 +41,7 @@
 					}, 500);
 			</script>';
 		} else {
-			$add = mysqli_query($conn, "INSERT INTO user (username, password, nama) VALUES ('$username', '".md5($password)."', '$nama')");
+			$add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama) VALUES ('$username', '$email' ,'".md5($password)."', '$nama')");
 			echo '<script>
 				setTimeout(function() {
 					swal({
@@ -83,11 +84,24 @@
                         <form method="POST" action="" class="needs-validation" novalidate="" autocomplete="off">
                             <div class="form-group form-flex">
                                 <label for="username" class="form-hidden">Username</label>
-                                <i class="far fa-envelope fa-lg form-icon"></i>
+                                <i class="fas fa-user-tie fa-lg form-icon"></i>
                                 <div class="form-edit">
-                                    <input id="username" type="text" placeholder="Email" class="form-control form-bord " minlength="2" name="username" tabindex="1" required autofocus>
+                                    <input id="username" type="text" placeholder="Username" class="form-control form-bord " minlength="2" name="username" tabindex="1" required autofocus>
                                     <div class="invalid-feedback">
                                         Mohon isi username anda dengan benar!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-flex">
+                                <div class="d-block">
+                                    <label for="email" class="control-label form-hidden">Email</label>
+                                </div>
+                                <i class="fas fa-envelope fa-lg  form-icon"></i>
+                                <div class="form-edit">
+                                    <input id="email" type="text" placeholder="Email" class="form-control form-bord" name="email" tabindex="2" required>
+                                    <div class="invalid-feedback">
+                                        Mohon isi Email anda!
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +125,7 @@
                                 </div>
                                 <i class="fas fa-user fa-lg  form-icon"></i>
                                 <div class="form-edit">
-                                    <input id="nama" type="text" placeholder="Nama" class="form-control form-bord" name="nama" tabindex="2" required>
+                                    <input id="nama" type="text" placeholder="Nama Lengkap" class="form-control form-bord" name="nama" tabindex="2" required>
                                     <div class="invalid-feedback">
                                         Mohon isi Nama anda!
                                     </div>

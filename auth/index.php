@@ -26,7 +26,7 @@
       @$user = mysqli_real_escape_string($conn, $_POST['username']);
       @$pass = mysqli_real_escape_string($conn, $_POST['password']);
 
-      $login = mysqli_query($conn, "SELECT * FROM user WHERE username='$user' AND password='".md5($pass)."'");
+      $login = mysqli_query($conn, "SELECT * FROM user WHERE (username='$user' or email='$user') AND password='".md5($pass)."'");
       $cek = mysqli_num_rows($login);
       $userid = mysqli_fetch_array($login);
 
@@ -70,7 +70,7 @@
                 <label for="username" class="form-hidden">Username</label>
                 <i class="far fa-envelope fa-lg form-icon"></i>
                 <div class="form-edit">
-                  <input id="username" type="text" placeholder="Email" class="form-control form-bord " minlength="2" name="username" tabindex="1" required autofocus>
+                  <input id="username" type="text" placeholder="Email / Username" class="form-control form-bord " minlength="2" name="username" tabindex="1" required autofocus>
                   <div class="invalid-feedback">
                     Mohon isi username anda dengan benar!
                   </div>
