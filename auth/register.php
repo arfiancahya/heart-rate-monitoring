@@ -40,7 +40,7 @@
 					}, 500);
 			</script>';
 		} else {
-			$add = mysqli_query($conn, "INSERT INTO user (username, password, nama) VALUES ('$username', '$password', '$nama')");
+			$add = mysqli_query($conn, "INSERT INTO user (username, password, nama) VALUES ('$username', '".md5($password)."', '$nama')");
 			echo '<script>
 				setTimeout(function() {
 					swal({
