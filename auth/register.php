@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/stisla.svg" />
-    <title>Rekam Medis - Login</title>
+    <title>Smart Care - Register</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="../assets/modules/bootstrap/css/bootstrap.min.css">
