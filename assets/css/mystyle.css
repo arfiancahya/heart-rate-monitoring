@@ -3120,6 +3120,19 @@ a.bb {
     border-radius: 30px;
 }
 
+.clr-h1 {
+    color: #D18411;
+}
+
+.p-style {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.mrg-btm {
+    margin-bottom: 30px;
+}
+
 .budget-price {
     display: inline-block;
     width: 100%;

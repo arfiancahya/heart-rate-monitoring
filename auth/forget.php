@@ -33,11 +33,11 @@ include 'connect.php';
       $pass=md5($row['password']);
     }
     //$link="<a href='localhost:8080/phpmailer/reset_pass.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
-    require_once('phpmail/class.phpmailer.php');
-    require_once('phpmail/class.smtp.php');
+    require_once('../phpmail/class.phpmailer.php');
+    require_once('../phpmail/class.smtp.php');
     $mail = new PHPMailer();
 	
-	$body      = "Klik link berikut untuk reset Password, <a href='http://localhost/heart/auth/reset_pass.php?reset=$pass&key=$email'>$pass<a>"; //isi dari email
+	$body      = "Klik link berikut untuk reset Password, <a href='http://localhost/heart/auth/resert_pass.php?reset=$pass&key=$email'>$pass<a>"; //isi dari email
 				
    // $mail->CharSet =  "utf-8";
     $mail->IsSMTP();
@@ -64,17 +64,7 @@ include 'connect.php';
     $mail->MsgHTML($body);
 	if($mail->Send())
     {
-        echo '<script>
-        setTimeout(function() {
-            swal({
-                title: "Berhasil!",
-                text: "Check your Email For Get Code to Reset Your Password!",
-                icon: "success"
-            }, function() {
-                window.location = "mail.php";
-                });
-            }, 500);
-    </script>';//jika pesan terkirim
+        echo "<script> alert('Link reset password telah dikirim ke email anda, Cek email untuk melakukan reset'); window.location = 'mail.html'; </script>";
 				
     }
     else
