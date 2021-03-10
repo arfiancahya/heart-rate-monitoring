@@ -3087,6 +3087,21 @@ a.bb {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.pdn-btm {
+    height: 100vh;
+}
+
+.mrg-tp {
+    margin-top: 85px;
+}
+
+.btn-widh {
+    width: 10%;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .font-weight-600 {
     font-weight: 600 !important;
 }

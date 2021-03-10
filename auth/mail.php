@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/stisla.svg" />
+  <title>Smart Care - Login</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="../assets/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/modules/fontawesome/css/all.min.css">
+
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../assets/css/mystyle.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+
+
+</head>
+
+<body>
+  <div id="app">
+    <section class="mrg-tp">
+        <div class="text-center">
+            <img src="../assets/img/Icon Gmail.svg">
+            <h1 class="">Check Your Email!</h1>
+            <p class="">
+                <span>We have sent a password recovery</span>
+            </p>
+            <p class="">
+                <span>instruction to your email</span>
+            </p>
+            <div class="">
+            <a href="register.php"><button type="submit" class="btn black btn-primary btn-lg btn-widh" tabindex="4">
+                Sign Up
+              </button>
+            </a>
+            </div>
+        </div>
+    </section>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="../assets/modules/jquery.min.js"></script>
+  <script src="../assets/modules/popper.js"></script>
+  <script src="../assets/modules/tooltip.js"></script>
+  <script src="../assets/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="../assets/modules/moment.min.js"></script>
+  <script src="../assets/js/stisla.js"></script>
+
+  <!-- Template JS File -->
+  <script src="../assets/js/scripts.js"></script>
+  <script src="../assets/js/custom.js"></script>
+  <!-- Sweet Alert -->
+  <script src="../assets/modules/sweetalert/sweetalert.min.js"></script>
+  <script src="../assets/js/page/modules-sweetalert.js"></script>
+</body>
+
+</html>

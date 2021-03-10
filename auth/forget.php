@@ -17,7 +17,85 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 
   <?php
-  session_start();
+
+if(isset($_POST['submit_email']))
+{
+  
+include 'connect.php';
+  $email = $_POST['email'];
+  
+  $select= mysqli_query($conn, "SELECT email,password FROM user WHERE email='$email'");
+  if(mysqli_num_rows($select)==1)
+  {
+    while($row=mysqli_fetch_array($select))
+    {
+      $email=$row['email'];
+      $pass=md5($row['password']);
+    }
+    //$link="<a href='localhost:8080/phpmailer/reset_pass.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
+    require_once('phpmail/class.phpmailer.php');
+    require_once('phpmail/class.smtp.php');
+    $mail = new PHPMailer();
+	
+	$body      = "Klik link berikut untuk reset Password, <a href='http://localhost/heart/auth/reset_pass.php?reset=$pass&key=$email'>$pass<a>"; //isi dari email
+				
+   // $mail->CharSet =  "utf-8";
+    $mail->IsSMTP();
+    // enable SMTP authentication
+	$mail->SMTPDebug  = 1;
+    $mail->SMTPAuth = true;                  
+    // GMAIL username
+    $mail->Username = "hbrmonitoring@gmail.com";
+    // GMAIL password
+    $mail->Password = "F@niF1an";
+    $mail->SMTPSecure = "ssl";  
+    // sets GMAIL as the SMTP server
+    $mail->Host = "smtp.gmail.com";
+    // set the SMTP port for the GMAIL server
+    $mail->Port = "465";
+    $mail->From='hbrmonitoring@gmail.com';
+    $mail->FromName='Admin Aplikasi Monitoring Detak Jantung';
+	  
+	$email = $_POST['email'];
+	
+    $mail->AddAddress($email, 'User Sistem');
+    $mail->Subject  =  'Reset Password';
+    $mail->IsHTML(true);
+    $mail->MsgHTML($body);
+	if($mail->Send())
+    {
+        echo '<script>
+        setTimeout(function() {
+            swal({
+                title: "Berhasil!",
+                text: "Check your Email For Get Code to Reset Your Password!",
+                icon: "success"
+            }, function() {
+                window.location = "mail.php";
+                });
+            }, 500);
+    </script>';//jika pesan terkirim
+				
+    }
+    else
+    {
+      echo "Mail Error - >".$mail->ErrorInfo;
+    }
+  }
+else {
+	echo '<script>
+				setTimeout(function() {
+					swal({
+						title: "Email Tidak Ditemukan",
+						text: "Email yang anda gunakan tidak terdaftar pada sistem!",
+						icon: "error"
+						});
+					}, 500);
+			</script>';//jika pesan terkirim
+	
+}  
+}
+  
   if (isset($_SESSION['id_user'])) {
     header('location:../');
   } else {
@@ -55,46 +133,34 @@
     <section class="login-content">
       <div class="login-container">
         <div class="login-style">
-          <div class="login-coloum">
+          <div class="login-coloum pdn-btm">
             <div class="login-brand">
-              <h1 class="">Sign In To Smart Care </h1>
-              <div class="text-align-center">
-                <i class="fab fa-facebook-f fa-2x"></i>
-                <i class="fab fa-google-plus-g fa-2x mrg"></i>
-                <i class="fab fa-linkedin-in fa-2x"></i>
-              </div>
+              <h1 class="">Forgot your password? </h1>
             </div>
-            <p class="text-center">or use your email account</p>
+            <p class="text-center">
+            <span>Please enter the e-mail address you use</span>
+            </p>
+            <p class="text-center">
+            <span>when creating your account, we’ll send you</span>
+            </p>
+            <p class="text-center">
+            <span>instruction to reset your password</span>
+            </p>
             <form method="POST" action="" class="needs-validation" novalidate="" autocomplete="off">
               <div class="form-group form-flex">
-                <label for="username" class="form-hidden">Username</label>
+                <label for="email" class="form-hidden">Email</label>
                 <i class="far fa-envelope fa-lg form-icon"></i>
                 <div class="form-edit">
-                  <input id="username" type="text" placeholder="Email / Username" class="form-control form-bord " minlength="2" name="username" tabindex="1" required autofocus>
+                  <input id="email" type="text" placeholder="Confirmation Your Email" class="form-control form-bord " minlength="2" name="email" tabindex="1" required autofocus>
                   <div class="invalid-feedback">
-                    Mohon isi username anda dengan benar!
+                    Mohon isi Email anda dengan benar!
                   </div>
                 </div>
               </div>
 
-              <div class="form-group form-flex">
-                <div class="d-block">
-                  <label for="password" class="control-label form-hidden">Password</label>
-                </div>
-                <i class="fas fa-lock fa-lg  form-icon"></i>
-                <div class="form-edit">
-                  <input id="password" type="password" placeholder="Password" class="form-control form-bord" name="password" tabindex="2" required>
-                  <div class="invalid-feedback">
-                    Mohon isi password anda!
-                  </div>
-                </div>
-              </div>
-              <a href="forget.php">
-                <p class="text-center">Forgot your password</p>
-              </a>
               <div class="form-group form-flex"">
-                        <button type="submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
-                Sign In
+                        <button type=" submit" name="submit_email" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
+                Send
                 </button>
               </div>
             </form>

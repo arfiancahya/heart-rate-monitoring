@@ -21,13 +21,8 @@ $output = mysqli_fetch_array($nama);
       <div class="d-sm-none d-lg-inline-block">Hi, <?php echo ucwords($output['nama']); ?></div></a>
       <div class="dropdown-menu dropdown-menu-right">
         <div class="dropdown-title"><i class="fas fa-circle text-success"></i>
-          <?php
-          if($output["pekerjaan"] == "1"){
-            echo "Dokter";
-          }else{
-            echo "Apoteker";
-          }
-          ?>
+        <?php echo ucwords($output['nama']); ?>
+          
         </div>
         <div class="dropdown-divider"></div>
         <a href="#" data-target="#ModalLogout" data-toggle="modal" class="dropdown-item has-icon text-danger">
