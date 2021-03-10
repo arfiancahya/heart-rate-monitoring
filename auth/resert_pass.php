@@ -25,7 +25,7 @@
         <div class="login-style">
           <div class="login-coloum pdn-btm">
             <div class="login-brand">
-              <h1 class="">Reset your password!</h1>
+              <h1 class="clr-h1">Reset your password!</h1>
             </div>
             <p class="text-center">
             <span>Please enter new password for your account,</span>

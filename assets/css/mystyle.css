@@ -3127,10 +3127,19 @@ a.bb {
 .p-style {
     margin-bottom: 0;
     line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #707070;
+    font-weight: bold;
 }
 
 .mrg-btm {
     margin-bottom: 30px;
+}
+
+.mrg-tp-2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .budget-price {

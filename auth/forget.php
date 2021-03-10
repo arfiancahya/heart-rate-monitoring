@@ -125,19 +125,19 @@ else {
         <div class="login-style">
           <div class="login-coloum pdn-btm">
             <div class="login-brand">
-              <h1 class="">Forgot your password? </h1>
+              <h1 class="clr-h1">Forgot your password? </h1>
             </div>
-            <p class="text-center">
+            <p class="text-center p-style">
             <span>Please enter the e-mail address you use</span>
             </p>
-            <p class="text-center">
+            <p class="text-center p-style">
             <span>when creating your account, we’ll send you</span>
             </p>
-            <p class="text-center">
+            <p class="text-center p-style mrg-btm">
             <span>instruction to reset your password</span>
             </p>
             <form method="POST" action="" class="needs-validation" novalidate="" autocomplete="off">
-              <div class="form-group form-flex">
+              <div class="form-group form-flex mrg-tp-2">
                 <label for="email" class="form-hidden">Email</label>
                 <i class="far fa-envelope fa-lg form-icon"></i>
                 <div class="form-edit">

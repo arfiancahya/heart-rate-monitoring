@@ -57,7 +57,7 @@
         <div class="login-style">
           <div class="login-coloum">
             <div class="login-brand">
-              <h1 class="">Sign In To Smart Care </h1>
+              <h1 class="clr-h1">Sign In To Smart Care </h1>
               <div class="text-align-center">
                 <i class="fab fa-facebook-f fa-2x"></i>
                 <i class="fab fa-google-plus-g fa-2x mrg"></i>
