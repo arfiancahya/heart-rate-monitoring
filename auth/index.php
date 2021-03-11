@@ -89,13 +89,20 @@
                   </div>
                 </div>
               </div>
-              <a href="forget.php">
-                <p class="text-center">Forgot your password</p>
-              </a>
-              <div class="form-group form-flex"">
+              <div class="div-syle">
+                <a href="forget.php" class="a-style">
+                  <p class="text-center a-style">Forgot your password</p>
+                </a>
+              </div>
+              <div class="form-group form-flex mrg-btm-reset">
                         <button type="submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
                 Sign In
                 </button>
+              </div>
+              <div id="myId" class="div-syle d-none">
+                <a href="register.php" class="a-style">
+                  <p class="text-center a-style">First time here? <span style="text-decoration: underline; font-weight: bold;">signup</span></p>
+                </a>
               </div>
             </form>
           </div>

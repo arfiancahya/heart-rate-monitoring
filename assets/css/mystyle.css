@@ -2606,6 +2606,9 @@ h6 .badge {
         right: 0;
         left: auto;
     }
+    .register-brand {
+        display: none;
+    }
 }
 
 
@@ -3144,6 +3147,20 @@ a.bb {
 
 .margin-tops {
     margin-top: 40px;
+}
+
+.a-style {
+    display: inline;
+}
+
+.div-syle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mrg-btm-reset {
+    margin-bottom: 9px;
 }
 
 .budget-price {

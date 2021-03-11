@@ -132,11 +132,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-group form-flex"">
+                            <div class="form-group form-flex mrg-btm-reset">
                         <button type=" submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
                                 Sign Up
                                 </button>
                             </div>
+                            <div id="myId" class="div-syle d-none">
+                <a href="index.php" class="a-style">
+                  <p class="text-center a-style">have account? <span style="text-decoration: underline; font-weight: bold;">Login</span></p>
+                </a>
+              </div>
                         </form>
                     </div>
 
