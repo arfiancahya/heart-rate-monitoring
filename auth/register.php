@@ -20,18 +20,18 @@
     include 'connect.php';
     if (isset($_POST['submit'])) {
         $username = stripslashes($_POST['username']);
-        $username = mysqli_real_escape_string($conn, $username); 
+        $username = mysqli_real_escape_string($conn, $username);
         $email = stripslashes($_POST['email']);
-        $email = mysqli_real_escape_string($conn, $email); 
+        $email = mysqli_real_escape_string($conn, $email);
         $password = stripslashes($_POST['password']);
         $password = mysqli_real_escape_string($conn, $password);
         $nama     = stripslashes($_POST['nama']);
         $nama     = mysqli_real_escape_string($conn, $nama);
 
         $cekuser = mysqli_query($conn, "SELECT * FROM user WHERE username='$username'");
-		$baris = mysqli_num_rows($cekuser);
-		if ($baris >= 1) {
-			echo '<script>
+        $baris = mysqli_num_rows($cekuser);
+        if ($baris >= 1) {
+            echo '<script>
 				setTimeout(function() {
 					swal({
 						title: "Username sudah digunakan",
@@ -40,9 +40,9 @@
 						});
 					}, 500);
 			</script>';
-		} else {
-			$add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama) VALUES ('$username', '$email' ,'".md5($password)."', '$nama')");
-			echo '<script>
+        } else {
+            $add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama) VALUES ('$username', '$email' ,'" . md5($password) . "', '$nama')");
+            echo '<script>
 				setTimeout(function() {
 					swal({
 						title: "Berhasil!",
@@ -51,8 +51,8 @@
 						});
 					}, 500);
 			</script>';
-		}
-	}
+        }
+    }
     ?>
 </head>
 
@@ -73,7 +73,7 @@
                     </div>
                     <div class="login-coloum">
                         <div class="login-brand">
-                            <h1 class="">Sign Up To Smart Care </h1>
+                            <h1 class="clr-h1">Sign Up To Smart Care </h1>
                             <div class="text-align-center">
                                 <i class="fab fa-facebook-f fa-2x"></i>
                                 <i class="fab fa-google-plus-g fa-2x mrg"></i>
@@ -132,16 +132,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-group form-flex mrg-btm-reset">
-                        <button type=" submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
-                                Sign Up
+                            <div class="form-group form-flexs mrg-btm-reset">
+                                <button type=" submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
+                                    Sign Up
                                 </button>
                             </div>
                             <div id="myId" class="div-syle d-none">
-                <a href="index.php" class="a-style">
-                  <p class="text-center a-style">have account? <span style="text-decoration: underline; font-weight: bold;">Login</span></p>
-                </a>
-              </div>
+                                <a href="index.php" class="a-style">
+                                    <p class="text-center a-style">have account? <span style="text-decoration: underline; font-weight: bold;">Login</span></p>
+                                </a>
+                            </div>
                         </form>
                     </div>
 

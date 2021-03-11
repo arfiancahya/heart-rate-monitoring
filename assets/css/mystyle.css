@@ -2541,11 +2541,32 @@ h6 .badge {
     .navbar .nav-link.nav-link-lg div {
         display: none;
     }
+    .clr-h1 {
+        font-size: 28px;
+    }
+    .btn-width {
+        width: 35% !important;
+    }
+    .form-flex {
+        justify-content: start !important;
+        margin-left: 75px;
+        margin-right: 70px;
+    }
+    .form-control {
+        width: 200px !important;
+    }
+    .login-coloum {
+        padding-top: 100px !important;
+        padding-bottom: 145px !important;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
     .navbar .form-inline .search-element {
         display: block;
+    }
+    .clr-h1 {
+        font-size: 36px;
     }
 }
 
@@ -3073,6 +3094,11 @@ a.bb {
 }
 
 .form-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.form-flexs {
     display: flex;
     justify-content: center;
 }

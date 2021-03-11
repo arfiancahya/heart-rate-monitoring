@@ -148,7 +148,7 @@ else {
                 </div>
               </div>
 
-              <div class="form-group form-flex">
+              <div class="form-group form-flexs">
                         <button type=" submit" name="submit_email" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
                 Send
                 </button>

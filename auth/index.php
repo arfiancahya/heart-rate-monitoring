@@ -94,7 +94,7 @@
                   <p class="text-center a-style">Forgot your password</p>
                 </a>
               </div>
-              <div class="form-group form-flex mrg-btm-reset">
+              <div class="form-group form-flexs mrg-btm-reset">
                         <button type="submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
                 Sign In
                 </button>
