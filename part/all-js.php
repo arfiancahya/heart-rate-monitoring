@@ -9,7 +9,6 @@
 
 <!-- JS Libraies -->
 <script src="assets/modules/summernote/summernote-bs4.js"></script>
-<script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 <script src="assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="assets/modules/select2/dist/js/select2.full.min.js"></script>
 

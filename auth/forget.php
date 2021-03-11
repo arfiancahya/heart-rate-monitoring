@@ -45,15 +45,15 @@ include 'connect.php';
 	$mail->SMTPDebug  = 1;
     $mail->SMTPAuth = true;                  
     // GMAIL username
-    $mail->Username = "xxxx";
+    $mail->Username = "xxx";
     // GMAIL password
-    $mail->Password = "xxxx";
+    $mail->Password = "xxx";
     $mail->SMTPSecure = "ssl";  
     // sets GMAIL as the SMTP server
     $mail->Host = "smtp.gmail.com";
     // set the SMTP port for the GMAIL server
     $mail->Port = "465";
-    $mail->From='xxxxx';
+    $mail->From='xxx';
     $mail->FromName='Admin Aplikasi Monitoring Detak Jantung';
 	  
 	$email = $_POST['email'];

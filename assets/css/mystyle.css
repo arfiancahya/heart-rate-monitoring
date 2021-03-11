@@ -3142,6 +3142,10 @@ a.bb {
     margin-bottom: 50px;
 }
 
+.margin-tops {
+    margin-top: 40px;
+}
+
 .budget-price {
     display: inline-block;
     width: 100%;

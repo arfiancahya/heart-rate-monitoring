@@ -55,7 +55,7 @@
     <section class="login-content">
       <div class="login-container">
         <div class="login-style">
-          <div class="login-coloum">
+          <div class="login-coloum pdn-btm">
             <div class="login-brand">
               <h1 class="clr-h1">Sign In To Smart Care </h1>
               <div class="text-align-center">
