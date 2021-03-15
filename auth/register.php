@@ -61,7 +61,7 @@
         <section class="login-content">
             <div class="login-container">
                 <div class="login-style">
-                    <div class="register-brand">
+                    <div class="register-brand bg-register">
                         <h1 class="text-center">Welcome Back!</h1>
                         <p class="margin">To keep connected with us please
                             sign in with your personal info </p>
@@ -80,7 +80,7 @@
                                 <i class="fab fa-linkedin-in fa-2x"></i>
                             </div>
                         </div>
-                        <p class="text-center">or use your email for registrationt</p>
+                        <p class="text-center">or use your email for registration</p>
                         <form method="POST" action="" class="needs-validation" novalidate="" autocomplete="off">
                             <div class="form-group form-flex">
                                 <label for="username" class="form-hidden">Username</label>

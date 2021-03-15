@@ -22,6 +22,8 @@
 <script src="assets/js/page/index-0.js"></script>
 <script src="assets/js/page/modules-datatables.js"></script>
 <script src="assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous">
+    </script>
 
 <!-- Sweet Alert -->
 <script src="assets/modules/sweetalert/sweetalert.min.js"></script>

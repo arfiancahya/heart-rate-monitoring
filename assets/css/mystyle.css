@@ -5,6 +5,20 @@
     text-decoration: none;
 }
 
+body::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #444444;
+    border-radius: 23px;
+}
+
 .btn:focus,
 .btn:active,
 .btn:active:focus,
@@ -2549,7 +2563,7 @@ h6 .badge {
     }
     .form-flex {
         justify-content: start !important;
-        margin-left: 75px;
+        margin-left: 70px;
         margin-right: 70px;
     }
     .form-control {
@@ -2558,6 +2572,9 @@ h6 .badge {
     .login-coloum {
         padding-top: 100px !important;
         padding-bottom: 145px !important;
+    }
+    .p-style {
+        font-size: 13.5px !important;
     }
 }
 
@@ -2568,6 +2585,9 @@ h6 .badge {
     .clr-h1 {
         font-size: 36px;
     }
+    .p-style {
+        font-size: 14px !important;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -2576,6 +2596,9 @@ h6 .badge {
     }
     .collapse .navbar-nav {
         position: absolute;
+    }
+    .p-style {
+        font-size: 14px !important;
     }
 }
 
@@ -2627,7 +2650,9 @@ h6 .badge {
         right: 0;
         left: auto;
     }
-    .register-brand {
+    .register-brand,
+    .bg-register,
+    .bg-login {
         display: none;
     }
 }
@@ -3056,12 +3081,100 @@ a.bb {
 .register-brand {
     background-color: #D18411;
     width: 450px;
-    background-image: url(../img/Hiasan.svg), linear-gradient(360deg, #BC339E 0%, rgba(220, 112, 107, 0.7) 45.83%, rgba(223, 153, 17, 0.85) 97.85%);
     background-size: cover;
     background-position: center;
     padding-top: 250px;
     text-align: center;
     color: white;
+}
+
+.bg-register {
+    background-image: url(../img/Hiasan\ 2.svg), linear-gradient(360deg, #BC339E 0%, rgba(220, 112, 107, 0.7) 45.83%, rgba(223, 153, 17, 0.85) 97.85%);
+}
+
+.bg-login {
+    background-image: url(../img/Hiasan.svg), linear-gradient(360deg, #BC339E 0%, rgba(220, 112, 107, 0.7) 45.83%, rgba(223, 153, 17, 0.85) 97.85%);
+}
+
+
+/*Loading Style */
+
+.heart-rate {
+    width: 150px;
+    height: 73px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.fade-in {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    top: 0;
+    right: 0;
+    animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out {
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    top: 0;
+    left: -120%;
+    animation: heartRateOut 2.5s linear infinite;
+    background: rgba(255, 255, 255, 1);
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+@keyframes heartRateIn {
+    0% {
+        width: 100%;
+    }
+    50% {
+        width: 0;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes heartRateOut {
+    0% {
+        left: -120%;
+    }
+    30% {
+        left: -120%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 30;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.loading h1 {
+    margin-top: 10px;
+    color: #E0E0E0;
+    font-size: 1.5rem;
+}
+
+.loading-finish {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .btn-reg {

@@ -106,7 +106,7 @@
               </div>
             </form>
           </div>
-          <div class="register-brand">
+          <div class="register-brand bg-login">
             <h1 class="text-center">Hello My Friend!</h1>
             <p class="margin">Enter your personal details and start journey with us </p>
             <a href="register.php"><button type="submit" class="btn black margin btn-lg btn-block btn-width btn-reg" tabindex="4">

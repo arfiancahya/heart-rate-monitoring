@@ -111,7 +111,7 @@ include 'connect.php';
 }
 ?>
           </div>
-          <div class="register-brand">
+          <div class="register-brand bg-login">
           </div>
         </div>
       </div>
