@@ -3101,7 +3101,7 @@ a.bb {
 
 .heart-rate {
     width: 150px;
-    height: 73px;
+    height: 100%;
     position: relative;
     margin: 20px auto;
 }
@@ -3164,6 +3164,7 @@ a.bb {
     height: 100vh;
     z-index: 30;
     transition: opacity 1.5s ease-in-out;
+    background-color: #ffffff;
 }
 
 .loading h1 {

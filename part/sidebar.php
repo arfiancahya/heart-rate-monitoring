@@ -19,7 +19,7 @@ foreach ($pecahjudul as $w) {
       <li <?php echo ($page == "Dashboard") ? "class=active" : ""; ?>><a class="nav-link" href="index.php"><i class="fas fa-heartbeat"></i><span>Dashboard</span></a></li>
       <li class="menu-header">Menu</li>
 
-      <li <?php echo ($page == "Rawat Jalan") ? "class=active" : ""; ?>><a class="nav-link" href="rawat_jalan.php"><i class="fas fa-user"></i> <span>Profile</span></a></li>
+      <li <?php echo ($page == "Profile") ? "class=active" : ""; ?>><a class="nav-link" href="user.php"><i class="fas fa-user"></i> <span>Profile</span></a></li>
       <li <?php echo ($page == "Data Pasien" || @$page1 == "det") ? "class=active" : ""; ?>><a class="nav-link" href="pasien.php"><i class="fas fa-calendar-alt"></i> <span>History</span></a></li>
 
       <li <?php echo ($page == "Data Pegawai") ? "class=active" : ""; ?>><a href="pegawai.php" class="nav-link"><i class="fas fa-users"></i> <span>Data Pegawai</span></a></li>

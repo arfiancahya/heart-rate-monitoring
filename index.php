@@ -16,6 +16,10 @@
   }
   $nama = mysqli_query($conn, "SELECT * FROM user WHERE id=$sessionid");
   $output = mysqli_fetch_array($nama);
+
+  $tampilPeg    = mysqli_query($conn, "SELECT * FROM history WHERE id_user=$sessionid");
+  $peg    = mysqli_fetch_array($tampilPeg);
+
   ?>
   <style>
     #link-no {
@@ -37,7 +41,7 @@
       <h1>Loading to my website.... </h1>
     </div>
   </div>
-  
+
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
       <div class="navbar-bg"></div>
@@ -55,7 +59,18 @@
           </div>
           <div class="row">
             <?php echo ucwords($output['nama']); ?>
+            <div class="col-md-12">
+              <?php $tampilPeg    = mysqli_query($conn, "SELECT * FROM history WHERE id_user=$sessionid");
+              while ($row = mysqli_fetch_array($tampilPeg)) {
+              ?>
+              <div> 
+              <h1><?php echo ucwords($row['date']); ?></h1>
+              <h1><?php echo ucwords($row['sensor_value']); ?></h1>
+              </div>
+              
+            </div>
           </div>
+          <?php } ?>
         </section>
       </div>
       <?php include 'part/footer.php'; ?>
