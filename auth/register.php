@@ -27,6 +27,7 @@
         $password = mysqli_real_escape_string($conn, $password);
         $nama     = stripslashes($_POST['nama']);
         $nama     = mysqli_real_escape_string($conn, $nama);
+        $token = hash('sha256', md5(date('Y-m-d')));
 
         $cekuser = mysqli_query($conn, "SELECT * FROM user WHERE username='$username'");
         $baris = mysqli_num_rows($cekuser);
@@ -34,34 +35,62 @@
             echo '<script>
 				setTimeout(function() {
 					swal({
-						title: "Username sudah digunakan",
-						text: "Username sudah digunakan, gunakan username lain!",
+						title: "Username atau Email sudah digunakan",
+						text: "Username atau Email sudah digunakan, gunakan username dan Email lain!",
 						icon: "error"
 						});
 					}, 500);
 			</script>';
         } else {
-            $add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama) VALUES ('$username', '$email' ,'" . md5($password) . "', '$nama')");
-            echo '<script>
-				setTimeout(function() {
-					swal({
-						title: "Berhasil!",
-						text: "User telah ditambahkan!",
-						icon: "success"
-						});
-					}, 500);
-			</script>';
+            $add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama, token, aktif) VALUES ('$username', '$email' ,'" . md5($password) . "', '$nama', '".$token."', '0')");
+            require_once('../phpmail/class.phpmailer.php');
+            require_once('../phpmail/class.smtp.php');
+            $mail = new PHPMailer(true);
+
+            $body      = "Selemat, anda berhasil membuat akun. Untuk mengaktifkan akun anda silahkan klik link dibawah ini, <a href='http://localhost/heart/auth/activation.php?t=".$token."'>http://localhost/heart/auth/activation.php?t=".$token."</a>"; //isi dari email
+
+            // $mail->CharSet =  "utf-8";
+            $mail->IsSMTP();
+            // enable SMTP authentication
+            $mail->SMTPDebug  = 1;
+            $mail->SMTPAuth = true;
+            // GMAIL username
+            $mail->Username = "xxx";
+            // GMAIL password
+            $mail->Password = "xxx";
+            $mail->SMTPSecure = "ssl";
+            // sets GMAIL as the SMTP server
+            $mail->Host = "smtp.gmail.com";
+            // set the SMTP port for the GMAIL server
+            $mail->Port = "465";
+            $mail->From = 'xxx';
+            $mail->FromName = 'Admin Aplikasi Monitoring Detak Jantung';
+
+            $email = $_POST['email'];
+
+            $mail->AddAddress($email, 'User Sistem');
+            $mail->Subject  =  '"Aktivasi pendaftaran Member"';
+            $mail->IsHTML(true);
+            $mail->MsgHTML($body);
+            if ($mail->Send()) {
+                echo "<script> alert('Selemat, anda berhasil membuat akun. Untuk mengaktifkan akun anda silahkan klik link dibawah ini.'); window.location = 'mail.html'; </script>";
+            } else {
+                echo "Mail Error - >" . $mail->ErrorInfo;
+            }
         }
     }
     ?>
 </head>
 
 <body>
-<div class="loading">
-    <div class="load">
-    <div class="lds-ripple"><div></div><div></div></div>
+    <div class="loading">
+        <div class="load">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </div>
-  </div>
     <div id="app">
         <section class="login-content">
             <div class="login-container">

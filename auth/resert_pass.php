@@ -49,10 +49,12 @@
 				?>
             <form method="POST" action="" class="needs-validation" novalidate="" autocomplete="off">
               <div class="form-group form-flex">
-                <label for="email" class="form-hidden">Email</label>
+                <label for="password" class="form-hidden">Password Baru</label>
                 <i class="fas fa-lock fa-lg form-icon"></i>
                 <div class="form-edit">
-                  <input id="email" type="text" placeholder="Confirmation Your Email" class="form-control form-bord " minlength="2" name="email" tabindex="1" required autofocus>
+                  <input id="password" type="password" placeholder="New Password" class="form-control form-bord " minlength="2" name="password" tabindex="1" required autofocus>
+                  <input type="hidden" name="email" value="<?php echo $email;?>">
+						<input type="hidden" name="pass" value="<?php echo $pass;?>">
                   <div class="invalid-feedback">
                     Mohon isi Email anda dengan benar!
                   </div>
@@ -61,11 +63,11 @@
 
               <div class="form-group form-flex">
                 <div class="d-block">
-                  <label for="password" class="control-label form-hidden">Password</label>
+                  <label for="konfirmasi_password" class="control-label form-hidden">Konfirmasi Password</label>
                 </div>
                 <i class="fas fa-lock fa-lg  form-icon"></i>
                 <div class="form-edit">
-                  <input id="password" type="password" placeholder="Password" class="form-control form-bord" name="password" tabindex="2" required>
+                  <input id="konfirmasi_password" type="password" placeholder="Confirm Your Password" class="form-control form-bord" name="konfirmasi" tabindex="2" required>
                   <div class="invalid-feedback">
                     Mohon isi password anda!
                   </div>
@@ -73,7 +75,7 @@
               </div>
 
               <div class="form-group form-flex"">
-                        <button type=" submit" name="submit_email" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
+                        <button type=" submit" name="submit_password" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
                 Send
                 </button>
               </div>
@@ -91,7 +93,7 @@ include 'connect.php';
   $email=$_POST['email'];
   $pass=$_POST['password'];
   
-  $select=mysqli_query($conn, "UPDATE user SET password='$pass' WHERE email='$email'");
+  $select=mysqli_query($conn, "UPDATE user SET password='" . md5($pass) . "' WHERE email='$email'");
     if($select){
       echo "<script> alert('Berhasil'); window.location = 'index.php'; </script>";
 	    

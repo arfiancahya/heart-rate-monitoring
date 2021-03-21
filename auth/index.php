@@ -26,7 +26,7 @@
       @$user = mysqli_real_escape_string($conn, $_POST['username']);
       @$pass = mysqli_real_escape_string($conn, $_POST['password']);
 
-      $login = mysqli_query($conn, "SELECT * FROM user WHERE (username='$user' or email='$user') AND password='".md5($pass)."'");
+      $login = mysqli_query($conn, "SELECT * FROM user WHERE (username='$user' or email='$user') AND password='".md5($pass)."' AND aktif='1'");
       $cek = mysqli_num_rows($login);
       $userid = mysqli_fetch_array($login);
 
