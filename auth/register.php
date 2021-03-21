@@ -57,6 +57,11 @@
 </head>
 
 <body>
+<div class="loading">
+    <div class="load">
+    <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+  </div>
     <div id="app">
         <section class="login-content">
             <div class="login-container">
@@ -166,6 +171,7 @@
     <!-- Template JS File -->
     <script src="../assets/js/scripts.js"></script>
     <script src="../assets/js/custom.js"></script>
+    <script src="../assets//js/loading.js"></script>
     <!-- Sweet Alert -->
     <script src="../assets/modules/sweetalert/sweetalert.min.js"></script>
     <script src="../assets/js/page/modules-sweetalert.js"></script>

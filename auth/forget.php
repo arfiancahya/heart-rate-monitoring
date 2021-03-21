@@ -45,15 +45,15 @@ include 'connect.php';
 	$mail->SMTPDebug  = 1;
     $mail->SMTPAuth = true;                  
     // GMAIL username
-    $mail->Username = "xxx";
+    $mail->Username = "hbrmonitoring@gmail.com";
     // GMAIL password
-    $mail->Password = "xxx";
+    $mail->Password = "F@niF1an";
     $mail->SMTPSecure = "ssl";  
     // sets GMAIL as the SMTP server
     $mail->Host = "smtp.gmail.com";
     // set the SMTP port for the GMAIL server
     $mail->Port = "465";
-    $mail->From='xxx';
+    $mail->From='hbrmonitoring@gmail.com';
     $mail->FromName='Admin Aplikasi Monitoring Detak Jantung';
 	  
 	$email = $_POST['email'];
@@ -119,6 +119,11 @@ else {
 </head>
 
 <body>
+<div class="loading">
+    <div class="load">
+    <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+  </div>
   <div id="app">
     <section class="login-content">
       <div class="login-container">
@@ -185,6 +190,7 @@ else {
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
+  <script src="../assets//js/loading.js"></script>
   <!-- Sweet Alert -->
   <script src="../assets/modules/sweetalert/sweetalert.min.js"></script>
   <script src="../assets/js/page/modules-sweetalert.js"></script>
