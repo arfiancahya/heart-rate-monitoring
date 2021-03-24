@@ -3342,6 +3342,27 @@ a.bb {
     margin-bottom: 9px;
 }
 
+.cont-prof {
+    background-color: #000;
+    flex: 0 0 40%;
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.gambar {
+    width: 100%;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+}
+
+.main-sty {
+    padding: 30px 30px 15px 30px;
+}
+
+.mrg-btn-btm {
+    margin-bottom: 20px;
+}
+
 .budget-price {
     display: inline-block;
     width: 100%;

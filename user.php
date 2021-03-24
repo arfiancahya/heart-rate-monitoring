@@ -45,7 +45,7 @@
 					}, 500);
 					</script>';
         } elseif ($old_pass != "" && $new_pass != "") {
-            $cekpass = mysqli_query($conn, "SELECT * FROM user WHERE id_user=$sessionid AND password='".md5($old_pass)."'");
+            $cekpass = mysqli_query($conn, "SELECT * FROM user WHERE id_user=$sessionid AND password='" . md5($old_pass) . "'");
             $cekada = mysqli_num_rows($cekpass);
             if ($cekada == 0) {
                 echo '<script>
@@ -58,7 +58,7 @@
 								}, 500);
 								</script>';
             } else {
-                $up2 = mysqli_query($conn, "UPDATE user SET UPDATE user SET username='$user', email='$mail', nama='$nama', tgl='$tgl', gender='$gend', blood='$blood', alamat='$alamt'  password='".md5($new_pass)."', alamat='$alam' WHERE id='$id'");
+                $up2 = mysqli_query($conn, "UPDATE user SET UPDATE user SET username='$user', email='$mail', nama='$nama', tgl='$tgl', gender='$gend', blood='$blood', alamat='$alamt'  password='" . md5($new_pass) . "', alamat='$alam' WHERE id='$id'");
                 echo '<script>
 				setTimeout(function() {
 					swal({
@@ -110,30 +110,35 @@
                         <h1>Profile</h1>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="cont-prof text-center">
                             <?php $nama = mysqli_query($conn, "SELECT * FROM user WHERE id=$sessionid");
                             while ($row = mysqli_fetch_array($nama)) {
                             ?>
-                                <div class="profile">
-                                    <h4><?php echo ucwords($row['username']); ?></h4>
-                                    <h4><?php echo ucwords($row['nama']); ?></h4>
-                                    <h4><?php echo ucwords($row['email']); ?></h4>
-                                    <h4><?php echo ucwords($row['tgl']); ?></h4>
+                                <div class="profile text-left ">
+                                    <img class="gambar" src="./assets/img/template_share_sayhihalf_avatoon_background_default_1607649318255 1.svg">
+                                    <div class="main-sty">
+                                        <h4 ><?php echo ucwords($row['nama']); ?></h4>
+                                        <h4><?php echo ucwords($row['email']); ?></h4>
+                                        <h4><?php echo ucwords($row['alamat']); ?></h4>
+                                    </div>
+                                    <!-- <h4><?php echo ucwords($row['tgl']); ?></h4>
                                     <h4><?php
-                                        if ($row['gender'] == '1') {
-                                            echo '<div class="badge badge-pill badge-primary mb-1">Laki-laki';
-                                        } else {
-                                            echo '<div class="badge badge-pill badge-success mb-1">Perempuan';
-                                        } ?></h4>
+                                        //if ($row['gender'] == '1') {
+                                        // echo '<div class="badge badge-pill badge-primary mb-1">Laki-laki';
+                                        // } //else {
+                                        // echo '<div class="badge badge-pill badge-success mb-1">Perempuan';
+                                        //} 
+                                        ?></h4>
                                     <h4><?php if ($row['tgl'] == "") {
-                                            echo "-";
-                                        } else {
-                                            umur($row['tgl']);
-                                        } ?></h4>
+                                            // echo "-";
+                                        } //else {
+                                        //umur($row['tgl']);
+                                        //} 
+                                        ?></h4> -->
 
                                 </div>
                                 <span data-target="#editUser" data-toggle="modal" data-id="<?php echo $row['id']; ?>" data-user="<?php echo $row['username']; ?>" data-mail="<?php echo $row['email']; ?>" data-nama="<?php echo $row['nama']; ?>" data-tgl="<?php echo $row['tgl']; ?>" data-gend="<?php echo $row['gender']; ?>" data-blood="<?php echo $row['blood']; ?>" data-alamt="<?php echo $row['alamat']; ?>">
-                                    <a class="btn btn-primary btn-action mr-1" title="Edit" data-toggle="tooltip"><i class="fas fa-pencil-alt"></i></a>
+                                    <a class="btn btn-primary btn-action mr-1 mrg-btn-btm" title="Edit" data-toggle="tooltip">Edit Profile</a>
                                 </span>
                         </div>
                     </div>
