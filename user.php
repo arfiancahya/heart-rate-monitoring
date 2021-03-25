@@ -117,7 +117,7 @@
                                 <div class="profile text-left ">
                                     <img class="gambar" src="./assets/img/template_share_sayhihalf_avatoon_background_default_1607649318255 1.svg">
                                     <div class="main-sty">
-                                        <h4 ><?php echo ucwords($row['nama']); ?></h4>
+                                        <h4><?php echo ucwords($row['nama']); ?></h4>
                                         <h4><?php echo ucwords($row['email']); ?></h4>
                                         <h4><?php echo ucwords($row['alamat']); ?></h4>
                                     </div>
@@ -137,9 +137,29 @@
                                         ?></h4> -->
 
                                 </div>
+
                                 <span data-target="#editUser" data-toggle="modal" data-id="<?php echo $row['id']; ?>" data-user="<?php echo $row['username']; ?>" data-mail="<?php echo $row['email']; ?>" data-nama="<?php echo $row['nama']; ?>" data-tgl="<?php echo $row['tgl']; ?>" data-gend="<?php echo $row['gender']; ?>" data-blood="<?php echo $row['blood']; ?>" data-alamt="<?php echo $row['alamat']; ?>">
-                                    <a class="btn btn-primary btn-action mr-1 mrg-btn-btm" title="Edit" data-toggle="tooltip">Edit Profile</a>
+                                    <a class="btn btn-primary btn-action mr-1 mrg-btn-btm btn-shw" title="Edit" data-toggle="tooltip">Edit Profile</a>
                                 </span>
+                        </div>
+                        <div class="cont-prof text-center mrg-left-10">
+                            <div class="profile text-left">
+                                <h2 class="pad-20 rest-mrg">My Information</h2>
+                                <hr class="rest-mrg">
+                                <div class="main-sty">
+                                    <h4>Sex : <?php if ($row['gender'] == '1') {
+                                                    echo 'Laki-Laki';
+                                                } else {
+                                                    echo 'Perempuan';
+                                                } ?></h4>
+                                    <h4>Age : <?php if ($row['tgl'] == "") {
+                                                    echo "-";
+                                                } else {
+                                                    umur($row['tgl']);
+                                                } ?></h4>
+                                    <h4>Blood : <?php echo ucwords($row['blood']); ?></h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>

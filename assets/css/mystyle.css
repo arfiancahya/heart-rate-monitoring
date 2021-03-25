@@ -1987,24 +1987,24 @@ h6 .badge {
 .btn-primary.disabled {
     box-shadow: 0 2px 6px #acb5f6;
     background-color: #D18411;
-    border-color: #6777ef;
+    border-color: #D18411;
 }
 
 .btn-primary:focus,
 .btn-primary.disabled:focus {
-    background-color: #394eea !important;
+    background-color: #f3a229 !important;
 }
 
 .btn-primary:focus:active,
 .btn-primary.disabled:focus:active {
-    background-color: #394eea !important;
+    background-color: #f3a229 !important;
 }
 
 .btn-primary:active,
 .btn-primary:hover,
 .btn-primary.disabled:active,
 .btn-primary.disabled:hover {
-    background-color: #394eea !important;
+    background-color: #f3a229 !important;
 }
 
 .btn-outline-primary,
@@ -3273,8 +3273,20 @@ a.bb {
     height: 100vh;
 }
 
+.pad-20 {
+    padding: 20px;
+}
+
+.rest-mrg {
+    margin: 0 !important;
+}
+
 .mrg-tp {
     margin-top: 85px;
+}
+
+.mrg-left-10 {
+    margin-left: 25px;
 }
 
 .btn-widh {
@@ -3343,7 +3355,8 @@ a.bb {
 }
 
 .cont-prof {
-    background-color: #000;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
     flex: 0 0 40%;
     max-width: 100%;
     border-radius: 30px;
@@ -3361,6 +3374,10 @@ a.bb {
 
 .mrg-btn-btm {
     margin-bottom: 20px;
+}
+
+.btn-shw {
+    box-shadow: 4px 4px 0 0 #925e11 !important;
 }
 
 .budget-price {
