@@ -60,7 +60,7 @@
           <div class="row">
             <?php echo ucwords($output['nama']); ?>
             <div class="col-md-12">
-              <?php $tampilPeg    = mysqli_query($conn, "SELECT * FROM history WHERE id_user=$sessionid");
+              <?php $tampilPeg    = mysqli_query($conn, "SELECT * FROM history WHERE id_user=$sessionid ORDER by id DESC LIMIT 1");
               while ($row = mysqli_fetch_array($tampilPeg)) {
               ?>
               <div> 

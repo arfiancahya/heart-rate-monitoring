@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
+    list-style: none;
 }
 
 body::-webkit-scrollbar {
@@ -3378,6 +3379,20 @@ a.bb {
 
 .btn-shw {
     box-shadow: 4px 4px 0 0 #925e11 !important;
+}
+
+.cont-prof-2 {
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+    flex: 0 0 40%;
+    max-width: 100%;
+    border-radius: 30px;
+    height: 60%;
+}
+
+.table-history {
+    display: flex;
+    justify-content: center;
 }
 
 .budget-price {
