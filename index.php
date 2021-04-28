@@ -8,6 +8,7 @@
   include 'auth/connect.php';
   include "part/head.php";
   include 'part_func/tgl_ind.php';
+  include "part_func/umur.php";
 
   $sessionid = $_SESSION['id_user'];
 
@@ -26,6 +27,8 @@
       text-decoration: none;
     }
   </style>
+
+  <link rel="stylesheet" href="./assets/css//dahs.css">
 </head>
 
 <body>
@@ -57,20 +60,99 @@
           <div class="section-header">
             <h1>Dashboard</h1>
           </div>
-          <div class="row">
-            <?php echo ucwords($output['nama']); ?>
-            <div class="col-md-12">
-              <?php $tampilPeg    = mysqli_query($conn, "SELECT * FROM history WHERE id_user=$sessionid ORDER by id DESC LIMIT 1");
-              while ($row = mysqli_fetch_array($tampilPeg)) {
-              ?>
-              <div> 
-              <h1><?php echo ucwords($row['date']); ?></h1>
-              <h1><?php echo ucwords($row['sensor_value']); ?></h1>
+          <div class="container">
+            <div class="dashboard">
+              <div class="dashboard-card wifi">
+                <div class="dashboard-card__title"><span class="fa fa-bell-o"></span>MAX30100</div>
+                <div class="dashboad-card__content">
+                  <div class="dashboard-card__card-piece">
+                    <div class="status status_success">
+                      <div class="status__icon"><span class="fa fa-check"></span></div>
+                      <div class="status__text">Activated</div>
+                    </div>
+                    <a href="#" class="dashboard-card__link" tabindex="1">Edit<span class="fa fa-angle-right"></span></a>
+                  </div>
+                </div>
               </div>
-              
+              <div class="dashboard-card alarm">
+                <div class="dashboard-card__title"><span class="fa fa-bell-o"></span>Indikator Jantung</div>
+                <div class="dashboad-card__content">
+                  <div class="dashboard-card__card-piece">
+                    <div class="status status_danger">
+                      <div class="status__icon"><span class="fa fa-times"></span></div>
+                      <div class="status__text">Disabled</div>
+                    </div>
+                    <a href="#" class="dashboard-card__link" tabindex="1">Edit<span class="fa fa-angle-right"></span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="dashboard-card light">
+                <div class="dashboard-card__title"><span class="fa fa-lightbulb-o"></span>Detak Jantung</div>
+                <div class="dashboad-card__content">
+                  <div class="dashboard-card__card-piece">
+                    <div class="stats__item">
+                      <div class="stats__title">Pulse</div>
+                      <div class="stats__icon"><span class="fa fa-heartbeat"></span></div>
+                      <div class="stats__measure">
+                        <div class="stats__value">14</div>
+                        <div class="stats__unit stats__unit_meters"></div>
+                      </div>
+                    </div>
+                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
+                  </div>
+                  <div class="dashboard-card__card-piece">
+                    <div class="stats__item">
+                      <div class="stats__title">SPo2</div>
+                      <div class="stats__icon"><span class="wi wi-raindrop"></span></div>
+                      <div class="stats__measure">
+                        <div class="stats__value">14</div>
+                        <div class="stats__unit stats__unit_meterss"></div>
+                      </div>
+                    </div>
+                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="dashboard-card power">
+                <div class="dashboard-card__title"><span class="fa fa-bar-chart"></span>ECG Sensor</div>
+                <div class="dashboad-card__content">
+                  <div class="dashboard-card__card-piece">
+                    <div class="stats__item">
+                      <div class="stats__title">Water</div>
+                      <div class="stats__icon"><span class="wi wi-raindrop"></span></div>
+                      <div class="stats__measure">
+                        <div class="stats__value">14</div>
+                        <div class="stats__unit stats__unit_meter">m</div>
+                      </div>
+                    </div>
+                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
+                  </div>
+                  <div class="dashboard-card__card-piece">
+                    <div class="stats__item">
+                      <div class="stats__title">Electricity</div>
+                      <div class="stats__icon"><span class="fa fa-flash"></span></div>
+                      <div class="stats__measure">
+                        <div class="stats__value">49</div>
+                        <div class="stats__unit stats__unit_power">kw/h</div>
+                      </div>
+                    </div>
+                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
+                  </div>
+                  <div class="dashboard-card__card-piece">
+                    <div class="stats__item">
+                      <div class="stats__title">Gas</div>
+                      <div class="stats__icon"><span class="fa fa-fire"></span></div>
+                      <div class="stats__measure">
+                        <div class="stats__value">37</div>
+                        <div class="stats__unit stats__unit_meter">m</div>
+                      </div>
+                    </div>
+                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <?php } ?>
         </section>
       </div>
       <?php include 'part/footer.php'; ?>

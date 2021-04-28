@@ -1,0 +1,34 @@
+<div class="row">
+            <div class="main-cont">
+              <img class="main-gam" src="./assets/img/template_share_sayhihalf_avatoon_background_default_1607649318255 1.svg">
+              <div class="">
+                <h4>Patient</h4>
+                <?php $nama = mysqli_query($conn, "SELECT * FROM user WHERE id=$sessionid");
+                while ($row = mysqli_fetch_array($nama)) {
+                ?>
+                  <div class="dash text-left ">
+                    <p><?php echo ucwords($row['nama']); ?></p>
+                    <a href="user.php"><button type="submit" class="btn black btn-primary btn-lg btn-block" tabindex="4">
+                        View Profile
+                      </button>
+                    </a>
+                  </div>
+              </div>
+              <div class="">
+                <h4>Sex : <?php if ($row['gender'] == '1') {
+                            echo 'Laki-Laki';
+                          } else {
+                            echo 'Perempuan';
+                          } ?></h4>
+                <h4>Age : <?php if ($row['tgl'] == "") {
+                            echo "-";
+                          } else {
+                            umur($row['tgl']);
+                          } ?></h4>
+                <h4>Blood : <?php echo ucwords($row['blood']); ?></h4>
+              </div>
+            </div>
+            <div class="">
+            </div>
+          </div>
+        <?php } ?>

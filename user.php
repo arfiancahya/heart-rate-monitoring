@@ -45,7 +45,7 @@
 					}, 500);
 					</script>';
         } elseif ($old_pass != "" && $new_pass != "") {
-            $cekpass = mysqli_query($conn, "SELECT * FROM user WHERE id_user=$sessionid AND password='" . md5($old_pass) . "'");
+            $cekpass = mysqli_query($conn, "SELECT * FROM user WHERE id=$sessionid AND password='" . md5($old_pass) . "'");
             $cekada = mysqli_num_rows($cekpass);
             if ($cekada == 0) {
                 echo '<script>
@@ -58,7 +58,7 @@
 								}, 500);
 								</script>';
             } else {
-                $up2 = mysqli_query($conn, "UPDATE user SET UPDATE user SET username='$user', email='$mail', nama='$nama', tgl='$tgl', gender='$gend', blood='$blood', alamat='$alamt'  password='" . md5($new_pass) . "', alamat='$alam' WHERE id='$id'");
+                $up2 = mysqli_query($conn, "UPDATE user SET username='$user', email='$mail', nama='$nama', tgl='$tgl', gender='$gend', blood='$blood', alamat='$alamt', password='" . md5($new_pass) . "' WHERE id='$id'");
                 echo '<script>
 				setTimeout(function() {
 					swal({
@@ -109,7 +109,7 @@
                     <div class="section-header">
                         <h1>Profile</h1>
                     </div>
-                    <div class="row">
+                    <div class="row jus-center">
                         <div class="cont-prof text-center">
                             <?php $nama = mysqli_query($conn, "SELECT * FROM user WHERE id=$sessionid");
                             while ($row = mysqli_fetch_array($nama)) {
@@ -117,9 +117,9 @@
                                 <div class="profile text-left ">
                                     <img class="gambar" src="./assets/img/template_share_sayhihalf_avatoon_background_default_1607649318255 1.svg">
                                     <div class="main-sty">
-                                        <h4>Nama Lengkap : <?php echo ucwords($row['nama']); ?></h4>
-                                        <h4>Email : <?php echo ucwords($row['email']); ?></h4>
-                                        <h4>Alamat : <?php echo ucwords($row['alamat']); ?></h4>
+                                        <h4>Nama Lengkap : <span><?php echo ucwords($row['nama']); ?></span></h4>
+                                        <h4>Email : <span><?php echo ucwords($row['email']); ?></span></h4>
+                                        <h4>Alamat : <span><?php echo ucwords($row['alamat']); ?></span></h4>
                                     </div>
                                 </div>
 
@@ -132,17 +132,17 @@
                                 <h2 class="pad-20 rest-mrg">My Information</h2>
                                 <hr class="rest-mrg">
                                 <div class="main-sty">
-                                    <h4>Sex : <?php if ($row['gender'] == '1') {
+                                    <h4>Sex : <span><?php if ($row['gender'] == '1') {
                                                     echo 'Laki-Laki';
                                                 } else {
                                                     echo 'Perempuan';
-                                                } ?></h4>
-                                    <h4>Age : <?php if ($row['tgl'] == "") {
+                                                } ?></span></h4>
+                                    <h4>Age : <span><?php if ($row['tgl'] == "") {
                                                     echo "-";
                                                 } else {
                                                     umur($row['tgl']);
-                                                } ?></h4>
-                                    <h4>Blood : <?php echo ucwords($row['blood']); ?></h4>
+                                                } ?></span></h4>
+                                    <h4>Blood : <span><?php echo ucwords($row['blood']); ?></span></h4>
                                 </div>
                             </div>
                             <div class="profile text-left">
