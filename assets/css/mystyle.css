@@ -2707,7 +2707,7 @@ a.dropdown-item {
 a.dropdown-item:focus,
 a.dropdown-item:active,
 a.dropdown-item.active {
-    background-color: #6777ef;
+    background-color: #f19918;
     color: #fff !important;
 }
 

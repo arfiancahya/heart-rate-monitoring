@@ -33,8 +33,8 @@ include 'connect.php';
       $pass=md5($row['password']);
     }
     //$link="<a href='localhost:8080/phpmailer/reset_pass.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
-    require_once('../phpmail/class.phpmailer.php');
-            require_once('../phpmail/class.smtp.php');
+    require_once('../PHPMailer/class.phpmailer.php');
+            require_once('../PHPMailer/class.smtp.php');
             $mail = new PHPMailer();
 
             $body      = "Klik link berikut untuk reset Password, <a href='http://localhost/heart/auth/resert_pass.php?reset=$pass&key=$email'>$pass<a>"; //isi dari email

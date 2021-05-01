@@ -10,7 +10,7 @@ foreach ($pecahjudul as $w) {
 <div class="main-sidebar sidebar-style-2">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <a href="index.html"><?php echo $judul; ?></a>
+      <a href="index.php"><?php echo $judul; ?></a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
       <a href="index.html"><?php echo $acronym; ?></a>

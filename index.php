@@ -29,6 +29,91 @@
   </style>
 
   <link rel="stylesheet" href="./assets/css//dahs.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+	<script >
+var hostname = "broker.mqttdashboard.com";
+var port = 8000;
+var clientId = "WebSocket";
+clientId += new Date().getUTCMilliseconds();;
+var topic = "hbrmoni/heart/pulse/beat";
+var topic2 = "hbrmoni/heart/pulse/spo";
+var pulse = "";
+var oksigen = "";
+
+mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
+mqttClient.onMessageArrived = MessageArrived;
+mqttClient.onConnectionLost = ConnectionLost;
+Connect();
+
+/Initiates a connection to the MQTT broker/
+function Connect(){
+	mqttClient.connect({
+	onSuccess: Connected,
+	onFailure: ConnectionFailed,
+	keepAliveInterval: 10,
+});
+}
+
+/*Callback for successful MQTT connection */
+function Connected() {
+	console.log("Connected to broker");
+	mqttClient.subscribe(topic);
+    mqttClient.subscribe(topic2);
+}
+
+/Callback for failed connection/
+function ConnectionFailed(res) {
+	console.log("Connect failed:" + res.errorMessage);
+}
+
+/Callback for lost connection/
+function ConnectionLost(res) {
+	if (res.errorCode !== 0) {
+		console.log("Connection lost:" + res.errorMessage);
+		Connect();
+	}
+}
+
+/*Callback for incoming message processing */
+function MessageArrived(message) {
+	console.log(message.destinationName +" : " + message.payloadString);
+
+	if (message.destinationName == "hbrmoni/heart/pulse/beat" ) {
+		pulse = message.payloadString;
+		
+		document.getElementById("pulse").innerHTML=pulse;
+
+	} 
+
+	if (message.destinationName == "hbrmoni/heart/pulse/spo") {
+		oksigen = message.payloadString;
+		document.getElementById("spo").innerHTML=oksigen;
+	} 
+
+
+	
+	// var a=parseInt(message.payloadString);
+	// var ht=100-a;
+	// document.getElementById("top").style.height=""+ht+"%" ;
+	// document.getElementById("top").innerHTML=message.payloadString;
+	// document.getElementById("container").style.backgroundColor="yellow";
+	// switch(message.payloadString){
+	// 	case "ON":
+	// 		displayClass = "on";
+	// 		break;
+	// 	case "OFF":
+	// 		displayClass = "off";
+	// 		break;
+	// 	default:
+	// 		displayClass = "unknown";
+	// }
+	// var topic = message.destinationName.split("/");
+	// if (topic.length == 3){
+	// 	var ioname = topic[1];
+	// 	UpdateElement(ioname, displayClass);
+	// }
+}
+		</script>
 </head>
 
 <body>
@@ -94,22 +179,22 @@
                       <div class="stats__title">Pulse</div>
                       <div class="stats__icon"><span class="fa fa-heartbeat"></span></div>
                       <div class="stats__measure">
-                        <div class="stats__value">14</div>
+                        <div id="pulse" class="stats__values">0.00</div>
                         <div class="stats__unit stats__unit_meters"></div>
                       </div>
                     </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
+                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""></span></a>
                   </div>
                   <div class="dashboard-card__card-piece">
                     <div class="stats__item">
                       <div class="stats__title">SPo2</div>
                       <div class="stats__icon"><span class="wi wi-raindrop"></span></div>
                       <div class="stats__measure">
-                        <div class="stats__value">14</div>
+                        <div id="spo" class="stats__values">0.00</div>
                         <div class="stats__unit stats__unit_meterss"></div>
                       </div>
                     </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
+                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""></span></a>
                   </div>
                 </div>
               </div>

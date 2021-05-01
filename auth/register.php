@@ -43,8 +43,8 @@
 			</script>';
         } else {
             $add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama, token, aktif) VALUES ('$username', '$email' ,'" . md5($password) . "', '$nama', '".$token."', '0')");
-            require_once('../phpmail/class.phpmailer.php');
-            require_once('../phpmail/class.smtp.php');
+            require_once('../PHPMailer/class.phpmailer.php');
+            require_once('../PHPMailer/class.smtp.php');
             $mail = new PHPMailer(true);
 
             $body      = "Selemat, anda berhasil membuat akun. Untuk mengaktifkan akun anda silahkan klik link dibawah ini, <a href='http://localhost/heart/auth/activation.php?t=".$token."'>http://localhost/heart/auth/activation.php?t=".$token."</a>"; //isi dari email
