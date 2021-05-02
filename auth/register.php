@@ -42,7 +42,7 @@
 					}, 500);
 			</script>';
         } else {
-            $add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama, token, aktif) VALUES ('$username', '$email' ,'" . md5($password) . "', '$nama', '".$token."', '0')");
+            $add = mysqli_query($conn, "INSERT INTO user (username, email, password, nama, tgl, gender, blood, alamat, token, aktif) VALUES ('$username', '$email' ,'" . md5($password) . "', '$nama', '' , '', '' , '', '".$token."', '0')");
             require_once('../PHPMailer/class.phpmailer.php');
             require_once('../PHPMailer/class.smtp.php');
             $mail = new PHPMailer(true);
@@ -167,7 +167,7 @@
                             </div>
 
                             <div class="form-group form-flexs mrg-btm-reset">
-                                <button type=" submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
+                                <button type="submit" name="submit" class="btn black btn-primary btn-lg btn-block btn-width" tabindex="4">
                                     Sign Up
                                 </button>
                             </div>
