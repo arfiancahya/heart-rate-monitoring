@@ -55,15 +55,15 @@
             $mail->SMTPDebug  = 1;
             $mail->SMTPAuth = true;
             // GMAIL username
-            $mail->Username = "hbrmonitoring@gmail.com";
+            $mail->Username = "xxx";
             // GMAIL password
-            $mail->Password = "F@niF1an";
+            $mail->Password = "xxx";
             $mail->SMTPSecure = "ssl";
             // sets GMAIL as the SMTP server
             $mail->Host = "smtp.gmail.com";
             // set the SMTP port for the GMAIL server
             $mail->Port = "465";
-            $mail->From = 'hbrmonitoring@gmail.com';
+            $mail->From = 'xxx';
             $mail->FromName = 'Admin Aplikasi Monitoring Detak Jantung';
 
             $email = $_POST['email'];
