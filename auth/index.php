@@ -51,9 +51,9 @@
 </head>
 
 <body>
-<div class="loading">
+<div class="loading bg">
     <div class="load">
-    <div class="lds-ripple"><div></div><div></div></div>
+    <img src="../assets/img/Logo.svg" alt="Brand Logo" class="icon-logo">
     </div>
   </div>
   <div id="app">

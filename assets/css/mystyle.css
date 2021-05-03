@@ -2557,7 +2557,7 @@ h6 .badge {
         display: none;
     }
     .clr-h1 {
-        font-size: 28px;
+        font-size: 22px;
     }
     .btn-width {
         width: 35% !important;
@@ -2565,10 +2565,13 @@ h6 .badge {
     .form-flex {
         justify-content: start !important;
         margin-left: 70px;
-        margin-right: 70px;
+        /* margin-right: 70px; */
     }
-    .form-control {
+    .form-edit .form-control {
         width: 200px !important;
+    }
+    .col-sm--9 .form-control {
+        width: inherit;
     }
     .login-coloum {
         padding-top: 100px !important;
@@ -2576,6 +2579,22 @@ h6 .badge {
     }
     .p-style {
         font-size: 13.5px !important;
+    }
+    .main-sty h4,
+    .main-sty h4 span {
+        font-size: 10px !important;
+    }
+    .jus-center {
+        flex-direction: column !important;
+    }
+    .mrg-left-10 {
+        margin-left: 0px !important;
+    }
+    .cont-prof-2 {
+        margin-top: 30px !important;
+    }
+    .bg .load .icon-logo {
+        width: 86vw !important;
     }
 }
 
@@ -2588,6 +2607,10 @@ h6 .badge {
     }
     .p-style {
         font-size: 14px !important;
+    }
+    .main-sty h4,
+    .main-sty h4 span {
+        font-size: 12px !important;
     }
 }
 
@@ -2603,6 +2626,10 @@ h6 .badge {
     }
     .pic-mail {
         width: 50vw;
+    }
+    .main-sty h4,
+    .main-sty h4 span {
+        font-size: 14px;
     }
 }
 
@@ -3151,6 +3178,43 @@ a.bb {
     }
 }
 
+.bg .load .icon-logo {
+    --size: 28vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--size);
+    animation: fade-in 0.8s ease-in-out;
+    /*infinite*/
+}
+
+.bg {
+    background: linear-gradient(180deg, #FFE159 0%, #F48D1A 100%) !important;
+    animation: fade-out 3s ease-in-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0%,
+    85% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
 
 /*Loading Style */
 
@@ -3307,6 +3371,7 @@ a.bb {
 
 .jus-center {
     justify-content: center;
+    flex-direction: row;
 }
 
 .btn-widh {
@@ -3414,6 +3479,7 @@ a.bb {
     max-width: 100%;
     border-radius: 30px;
     height: 60%;
+    margin-top: 0;
 }
 
 .table-history {

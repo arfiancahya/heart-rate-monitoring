@@ -28,7 +28,7 @@
     }
   </style>
 
-  <link rel="stylesheet" href="./assets/css//dahs.css">
+  <link rel="stylesheet" href="./assets/css/dahs.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
 	<script >
 var hostname = "broker.mqttdashboard.com";
