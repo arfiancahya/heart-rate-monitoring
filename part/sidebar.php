@@ -1,5 +1,5 @@
 <?php
-$judul = "Smart Care";
+$judul = "P A T A H";
 $pecahjudul = explode(" ", $judul);
 $acronym = "";
 

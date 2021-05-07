@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/stisla.svg" />
-  <title>Smart Care - Login</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/Patah.svg" />
+  <title>P A T A H - Login</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="../assets/modules/bootstrap/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
         <div class="login-style">
           <div class="login-coloum pdn-btm">
             <div class="login-brand">
-              <h1 class="clr-h1">Sign In To Smart Care </h1>
+              <h1 class="clr-h1">Sign In To Patah </h1>
               <div class="text-align-center">
                 <i class="fab fa-facebook-f fa-2x"></i>
                 <i class="fab fa-google-plus-g fa-2x mrg"></i>

@@ -6,7 +6,7 @@
     --color-gray-lime: #d0d3d0;
     --color-text-primary: #555555;
     --color-text-secondary: #989898;
-    --color-very-light-cyan: #f2f5f6;
+    --color-very-light-cyan: #f1fbff;
     --color-bg-light-gray: #dfdfdf;
     --color-success: #6b9d38;
     --color-danger: #de7f7f;
@@ -299,7 +299,7 @@ body {
 }
 
 .stats__unit_meters:after {
-    content: 'BPM';
+    content: 'PPM';
     font-size: .85rem;
     position: absolute;
     top: .375rem;
@@ -408,6 +408,20 @@ body {
 .power {
     grid-row: 5;
     grid-column: 1/4;
+}
+
+textarea {
+    width: 150px;
+    height: 90%;
+    border-color: Transparent;
+    text-align: center;
+    resize: none;
+    background-color: var(--color-very-light-cyan);
+    color: var(--color-very-dark-cyan);
+}
+
+::placeholder {
+    color: var(--color-very-dark-cyan);
 }
 
 @media (max-width: 992px) {

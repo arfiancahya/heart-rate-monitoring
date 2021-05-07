@@ -2596,6 +2596,9 @@ h6 .badge {
     .bg .load .icon-logo {
         width: 86vw !important;
     }
+    .color-red {
+        font-size: 30px !important;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -2611,6 +2614,9 @@ h6 .badge {
     .main-sty h4,
     .main-sty h4 span {
         font-size: 12px !important;
+    }
+    .color-red {
+        font-size: 30px !important;
     }
 }
 
@@ -2630,6 +2636,9 @@ h6 .badge {
     .main-sty h4,
     .main-sty h4 span {
         font-size: 14px;
+    }
+    .color-red {
+        font-size: 30px !important;
     }
 }
 
@@ -3524,6 +3533,11 @@ a.bb {
 .text-small {
     font-size: 12px;
     line-height: 20px;
+}
+
+.color-red {
+    color: #de7f7f;
+    font-size: 35px;
 }
 
 .text-title {
