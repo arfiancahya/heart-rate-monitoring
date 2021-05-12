@@ -11,7 +11,7 @@
  {
   $sensor_value = mysqli_real_escape_string($conn, $_POST["sensorValue"]);
   $ecg_value = mysqli_real_escape_string($conn, $_POST["sensorEcg"]);
-  $tgl = date('d-m-Y');
+  $tgl = date('Y-m-d');
   
     //insert post  
     $sql = "INSERT INTO history(id_user, tgl, sensor_value, ecg_value ) VALUES ('".$_SESSION['id_user']."', '".$tgl."','".$sensor_value."', '".$ecg_value."')";  

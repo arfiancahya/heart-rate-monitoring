@@ -89,7 +89,7 @@
 													?>
 														<tr>
 															<td><?php echo $i; ?></td>
-															<td><?php echo ucwords($row['date']); ?></td>
+															<td><?php echo ucwords($row['tgl']); ?></td>
 															<td><?php echo ucwords($row['sensor_value']); ?> BPM</td>
 															<td>sehat
 										</div>

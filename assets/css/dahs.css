@@ -299,7 +299,7 @@ body {
 }
 
 .stats__unit_meters:after {
-    content: 'PPM';
+    content: 'BPM';
     font-size: .85rem;
     position: absolute;
     top: .375rem;
@@ -523,5 +523,8 @@ textarea {
     }
     .stats__values {
         font-size: 2rem;
+    }
+    textarea {
+        width: 85px;
     }
 }

@@ -160,11 +160,11 @@ function MessageArrived(message) {
                       <div class="stats__icon"><span class="fa fa-heartbeat color-red"></span></div>
                       <div class="stats__measure">
                         <div id="pulse" class="stats__values">
-                        <textarea readonly name="sensor_value" class="sensor_value" placeholder="0.00" rows="1" cols="1" required></textarea></div>
+                        <textarea readonly  name="sensor_value" class="sensor_value" placeholder="0.00" rows="1" cols="1" required></textarea></div>
                         <div class="stats__unit stats__unit_meters"></div>
                       </div>
                     </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""></span></a>
+                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""><input type="submit"  value="Reload" onClick="document.location.reload(true)"></span></a>
                   </div>
                   <div class="dashboard-card__card-piece">
                     <div class="stats__item">
@@ -256,9 +256,16 @@ function MessageArrived(message) {
       }  
       setInterval(function(){   
            autoSave();   
-           }, 1000);  
+           }, 60000);  
  });  
  </script>
+ <script type="text/javascript">
+function reloadpage()
+{
+location.reload()
+}
+</script>
+</script>
 </body>
 
 </html>
