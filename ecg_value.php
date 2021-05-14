@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    $page = "Ecg";
+    $page = "Electrocardiongram";
     session_start();
     include 'auth/connect.php';
     include "part/head.php";
@@ -179,7 +179,7 @@ public broker and topic you can use for testing.
             <div class="main-content">
                 <section class="section">
                     <div class="section-header">
-                        <h1>Ecg Value</h1>
+                        <h1>Electrocardiongram</h1>
                     </div>
                     <div class="container">
                     <div id="graph" style="height: 500px; min-width: 500px"></div><!-- this the placeholder for the chart-->
@@ -205,7 +205,7 @@ public broker and topic you can use for testing.
                     defaultSeriesType: 'spline'
                 },
                 title: {
-                    text: 'Plotting Live websockets data from a MQTT topic'
+                    text: 'Electrocardiongram Value'
                 },
                 subtitle: {
                     text: 'broker: ' + MQTTbroker + ' | port: ' + MQTTport + ' | topic : ' + MQTTsubTopic

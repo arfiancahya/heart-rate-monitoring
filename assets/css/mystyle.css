@@ -3456,6 +3456,11 @@ a.bb {
     border-radius: 30px;
 }
 
+.inp-reload {
+    border: none;
+    background-color: var(--color-very-light-cyan);
+}
+
 .gambar {
     width: 100%;
     border-top-left-radius: 28px;

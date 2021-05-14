@@ -164,7 +164,7 @@ function MessageArrived(message) {
                         <div class="stats__unit stats__unit_meters"></div>
                       </div>
                     </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""><input type="submit"  value="Reload" onClick="document.location.reload(true)"></span></a>
+                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""></span></a>
                   </div>
                   <div class="dashboard-card__card-piece">
                     <div class="stats__item">
@@ -177,7 +177,7 @@ function MessageArrived(message) {
                         <input type="hidden" name="id_user" id="id_user"/>
                       </div>
                     </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""></span></a>
+                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""><input type="submit" class="inp-reload"  value="Reload" onClick="document.location.reload(true)"></span></a>
                   </div>
                 </div>
               </div>
