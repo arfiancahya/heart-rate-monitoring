@@ -44,7 +44,7 @@ public broker and topic you can use for testing.
         //settings BEGIN
         var MQTTbroker = 'broker.mqttdashboard.com';
         var MQTTport = 8000;
-        var MQTTsubTopic = 'hbrmoni/heart/pulse/#'; //works with wildcard # and + topics dynamically now
+        var MQTTsubTopic = 'hbrmoni/heart/ecg/#'; //works with wildcard # and + topics dynamically now
         //settings END
 
         var chart; // global variuable for chart

@@ -164,7 +164,7 @@ function MessageArrived(message) {
                         <div class="stats__unit stats__unit_meters"></div>
                       </div>
                     </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""></span></a>
+                    <a href="#" class="dashboard-card__link" tabindex="4"><span class=""><input class="inp-reload" type="submit" id="save"  value="Save"></span></a>
                   </div>
                   <div class="dashboard-card__card-piece">
                     <div class="stats__item">
@@ -181,44 +181,6 @@ function MessageArrived(message) {
                   </div>
                 </div>
               </div>
-              <div class="dashboard-card power">
-                <div class="dashboard-card__title"><span class="fa fa-bar-chart"></span>ECG Sensor</div>
-                <div class="dashboad-card__content">
-                  <div class="dashboard-card__card-piece">
-                    <div class="stats__item">
-                      <div class="stats__title">Water</div>
-                      <div class="stats__icon"><span class="wi wi-raindrop"></span></div>
-                      <div class="stats__measure">
-                        <div class="stats__value">14</div>
-                        <div class="stats__unit stats__unit_meter">m</div>
-                      </div>
-                    </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
-                  </div>
-                  <div class="dashboard-card__card-piece">
-                    <div class="stats__item">
-                      <div class="stats__title">Electricity</div>
-                      <div class="stats__icon"><span class="fa fa-flash"></span></div>
-                      <div class="stats__measure">
-                        <div class="stats__value">49</div>
-                        <div class="stats__unit stats__unit_power">kw/h</div>
-                      </div>
-                    </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
-                  </div>
-                  <div class="dashboard-card__card-piece">
-                    <div class="stats__item">
-                      <div class="stats__title">Gas</div>
-                      <div class="stats__icon"><span class="fa fa-fire"></span></div>
-                      <div class="stats__measure">
-                        <div class="stats__value">37</div>
-                        <div class="stats__unit stats__unit_meter">m</div>
-                      </div>
-                    </div>
-                    <a href="#" class="dashboard-card__link" tabindex="4">View in details<span class="fa fa-angle-right"></span></a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -232,7 +194,7 @@ function MessageArrived(message) {
   <script src="./assets/js/loading.js"></script>
   <script>  
  $(document).ready(function(){  
-      function autoSave()  
+  $("#save").click(function()  
       {  
            var sensor_value = $('.sensor_value').val();  
            var ecg_value = $('.ecg_value').val();  
@@ -248,15 +210,12 @@ function MessageArrived(message) {
                      {  
                           if(data != '')  
                           {  
-                               $('#id_user').val(data);  
-                          }  
+                            alert(data);
+                          } 
                      }  
                 });  
-           }            
-      }  
-      setInterval(function(){   
-           autoSave();   
-           }, 60000);  
+           }
+          });             
  });  
  </script>
  <script type="text/javascript">

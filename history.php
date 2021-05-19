@@ -72,11 +72,12 @@
 												<thead>
 													<tr>
 														<th class="text-center">
-															#
+															No
 														</th>
 														<th>Date</th>
 														<th>Pulse</th>
-														<th>Status ECG</th>
+														<th>SPo2</th>
+														<th>Indikator Jantung</th>
 														<th>Action</th>
 													</tr>
 												</thead>
@@ -91,6 +92,7 @@
 															<td><?php echo $i; ?></td>
 															<td><?php echo ucwords($row['tgl']); ?></td>
 															<td><?php echo ucwords($row['sensor_value']); ?> BPM</td>
+															<td><?php echo ucwords($row['ecg_value']); ?> %</td>
 															<td>sehat
 										</div>
 										</td>
