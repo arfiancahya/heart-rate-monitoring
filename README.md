@@ -1,6 +1,6 @@
 # Aplikasi Monitoring Kesehatan Jantung
 
-Native Website with PHP, JS, Bootstrap, My style Css, Node.js
+Native Website with PHP, JS, Bootstrap, My style Css, Jquery
 Sistem Monitoring Kesehatan Jantung
 
 Tutorial Menggunakan
