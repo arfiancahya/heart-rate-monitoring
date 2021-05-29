@@ -420,6 +420,12 @@ textarea {
     color: var(--color-very-dark-cyan);
 }
 
+.graphic {
+    background-color: var(--color-very-light-cyan);
+    height: 500px;
+    min-width: 500px
+}
+
 ::placeholder {
     color: var(--color-very-dark-cyan);
 }
@@ -458,6 +464,10 @@ textarea {
     }
     .light-switches:last-child {
         margin-bottom: 1rem;
+    }
+    .graphic {
+        height: 500px;
+        min-width: 400px
     }
 }
 
@@ -526,5 +536,9 @@ textarea {
     }
     textarea {
         width: 85px;
+    }
+    .graphic {
+        height: 500px;
+        min-width: 300px
     }
 }

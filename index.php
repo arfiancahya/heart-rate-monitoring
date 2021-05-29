@@ -210,7 +210,7 @@ function MessageArrived(message) {
                      {  
                           if(data != '')  
                           {  
-                            alert(data);
+                            alert("Data Tersimpan");
                           } 
                      }  
                 });  

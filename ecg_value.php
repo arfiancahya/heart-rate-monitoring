@@ -82,7 +82,7 @@ public broker and topic you can use for testing.
 
         //what is done when a message arrives from the broker
         function onMessageArrived(message) {
-            // console.log(message.destinationName, '', message.payloadString);
+             console.log(message.destinationName, '', message.payloadString);
 
             //check if it is a new topic, if not add it to the array
             if (dataTopics.indexOf(message.destinationName) < 0) {
@@ -147,9 +147,10 @@ public broker and topic you can use for testing.
         //settings for the chart
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
     <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
     <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
 </head>
 
 <body onload="init();">
@@ -182,7 +183,7 @@ public broker and topic you can use for testing.
                         <h1>Electrocardiongram</h1>
                     </div>
                     <div class="container">
-                    <div id="graph" style="height: 500px; min-width: 500px"></div><!-- this the placeholder for the chart-->
+                    <div id="graph" class="graphic"></div><!-- this the placeholder for the chart-->
                     </div>
                         
             </div>
@@ -202,7 +203,9 @@ public broker and topic you can use for testing.
             chart = new Highcharts.Chart({
                 chart: {
                     renderTo: 'graph',
-                    defaultSeriesType: 'spline'
+                    defaultSeriesType: 'spline',
+                    zoomType: 'x',
+                    backgroundColor: "#f1fbff",
                 },
                 title: {
                     text: 'Electrocardiongram Value'
@@ -218,44 +221,20 @@ public broker and topic you can use for testing.
                 yAxis: {
                     minPadding: 0.2,
                     maxPadding: 0.2,
+
                     title: {
                         text: 'Value',
                         margin: 80
                     }
                 },
+                mapNavigation: {
+            enableMouseWheelZoom: true
+        },
                 series: []
             });
         });
         </script>
-    <!-- <script>  
- $(document).ready(function(){  
-      function autoSave()  
-      {  
-           var sensor_value = $('.sensor_value').val();  
-           var ecg_value = $('.ecg_value').val();  
-           var id_user = "<?php echo $_SESSION['id_user'] ?>";  
-           if(sensor_value != '' && ecg_value != '')  
-           {  
-                $.ajax({  
-                     url:"save_db.php",  
-                     method:"POST",  
-                     data:{sensorValue:sensor_value, sensorEcg:ecg_value, clientID:id_user},  
-                     dataType:"text",  
-                     success:function(data)  
-                     {  
-                          if(data != '')  
-                          {  
-                               $('#id_user').val(data);  
-                          }  
-                     }  
-                });  
-           }            
-      }  
-      setInterval(function(){   
-           autoSave();   
-           }, 1000);  
- });  
- </script> -->
+    
 </body>
 
 </html>

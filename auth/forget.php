@@ -63,7 +63,7 @@ include 'connect.php';
             $mail->IsHTML(true);
             $mail->MsgHTML($body);
             if ($mail->Send()) {
-                echo "<script> alert('Link reset password telah dikirim ke email anda, Cek email untuk melakukan reset'); window.location = 'mail.html'; </script>";
+                echo '<script> alert("Link reset password telah dikirim ke email anda, Cek email untuk melakukan reset"); window.location = "mail.html"; </script>';
             } else {
                 echo "Mail Error - >" . $mail->ErrorInfo;
             }
