@@ -83,7 +83,7 @@
 												</thead>
 												<tbody>
 													<?php
-													$sql    = mysqli_query($conn, "SELECT * FROM history WHERE id_user=$sessionid ORDER BY id DESC");;
+													$sql    = mysqli_query($conn, "SELECT * FROM history WHERE id_user=$sessionid ORDER BY id DESC");
 													$i = 0;
 													while ($row = mysqli_fetch_array($sql)) {
 														$i++;

@@ -42,8 +42,8 @@ public broker and topic you can use for testing.
 */
 
         //settings BEGIN
-        var MQTTbroker = 'broker.mqttdashboard.com';
-        var MQTTport = 8000;
+        var MQTTbroker = 'broker.emqx.io';
+        var MQTTport = 8084;
         var MQTTsubTopic = 'hbrmoni/heart/ecg/#'; //works with wildcard # and + topics dynamically now
         //settings END
 
@@ -61,6 +61,7 @@ public broker and topic you can use for testing.
         //mqtt connecton options including the mqtt broker subscriptions
         var options = {
             timeout: 3,
+            useSSL: true,
             onSuccess: function() {
                 console.log("mqtt connected");
                 // Connection succeeded; subscribe to our topics
@@ -82,7 +83,7 @@ public broker and topic you can use for testing.
 
         //what is done when a message arrives from the broker
         function onMessageArrived(message) {
-             console.log(message.destinationName, '', message.payloadString);
+            console.log(message.destinationName, '', message.payloadString);
 
             //check if it is a new topic, if not add it to the array
             if (dataTopics.indexOf(message.destinationName) < 0) {
@@ -147,10 +148,10 @@ public broker and topic you can use for testing.
         //settings for the chart
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="http://code.highcharts.com/stock/highstock.js"></script>
-    <script src="http://code.highcharts.com/highcharts-more.js"></script>
-    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
-    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
 </head>
 
 <body onload="init();">
@@ -183,9 +184,9 @@ public broker and topic you can use for testing.
                         <h1>Electrocardiongram</h1>
                     </div>
                     <div class="container">
-                    <div id="graph" class="graphic"></div><!-- this the placeholder for the chart-->
+                        <div id="graph" class="graphic"></div><!-- this the placeholder for the chart-->
                     </div>
-                        
+
             </div>
             </section>
         </div>
@@ -199,7 +200,7 @@ public broker and topic you can use for testing.
 
     <script src="./assets/js/loading.js"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
+        $(document).ready(function() {
             chart = new Highcharts.Chart({
                 chart: {
                     renderTo: 'graph',
@@ -228,13 +229,13 @@ public broker and topic you can use for testing.
                     }
                 },
                 mapNavigation: {
-            enableMouseWheelZoom: true
-        },
+                    enableMouseWheelZoom: true
+                },
                 series: []
             });
         });
-        </script>
-    
+    </script>
+
 </body>
 
 </html>

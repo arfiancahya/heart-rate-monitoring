@@ -31,8 +31,8 @@
   <link rel="stylesheet" href="./assets/css/dahs.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
 	<script >
-var hostname = "broker.mqttdashboard.com";
-var port = 8000;
+var hostname = "broker.emqx.io";
+var port = 8084;
 var sessionId = "<?php echo $_SESSION['id_user'] ?>";
 var clientId = sessionId;
 var topic = "hbrmoni/heart/pulse/beat";
@@ -53,6 +53,7 @@ function Connect(){
 	onSuccess: Connected,
 	onFailure: ConnectionFailed,
 	keepAliveInterval: 10,
+  useSSL: true,
 });
 }
 
@@ -128,12 +129,12 @@ function MessageArrived(message) {
           <div class="container">
             <div class="dashboard">
               <div class="dashboard-card wifi">
-                <div class="dashboard-card__title"><span class="fa fa-bell-o"></span>MAX30100</div>
+                <div class="dashboard-card__title"><span class="fa fa-bell-o"></span>MQTT</div>
                 <div class="dashboad-card__content">
                   <div class="dashboard-card__card-piece">
                     <div class="status status_success">
                       <div class="status__icon"><span class="fa fa-check"></span></div>
-                      <div class="status__text">Activated</div>
+                      <div class="status__text">Connected</div>
                     </div>
                     <a href="#" class="dashboard-card__link" tabindex="1">Edit<span class="fa fa-angle-right"></span></a>
                   </div>
