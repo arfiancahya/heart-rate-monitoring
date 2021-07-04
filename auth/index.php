@@ -5,6 +5,16 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <link rel="shortcut icon" type="image/x-icon" href="../assets/img/Icon Patah.svg" />
+
+  <meta property="og:title" content="P A T A H - Personal Assistant Heart Health">
+  <meta property="og:site_name" content="Dashboard Monitoring">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="An application that is used to check heart health in real time through a website application created by Arfian Cahya">
+  <meta property="og:image" content="https://heart-rate-apps.herokuapp.com/assets/img/patah-icon.png">
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="og:image:alt" content="Logo my website application" />
   <title>P A T A H - Login</title>
 
   <!-- General CSS Files -->

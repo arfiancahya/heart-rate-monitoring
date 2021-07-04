@@ -33,6 +33,8 @@
 	<script >
 var hostname = "broker.emqx.io";
 var port = 8084;
+// var hostname = "127.0.01";
+// var port = 9001;
 var sessionId = "<?php echo $_SESSION['id_user'] ?>";
 var clientId = sessionId;
 var topic = "hbrmoni/heart/pulse/beat";
@@ -59,7 +61,9 @@ function Connect(){
 
 /*Callback for successful MQTT connection */
 function Connected() {
-	console.log("Connected to broker");
+  const status_mqtt = "Connected";
+  document.getElementById("status_mqtt").innerHTML = status_mqtt;
+	console.log(status_mqtt);
 	mqttClient.subscribe(topic);
     mqttClient.subscribe(topic2);
 }
@@ -79,7 +83,12 @@ function ConnectionLost(res) {
 
 /*Callback for incoming message processing */
 function MessageArrived(message) {
-	console.log(message.destinationName +" : " + message.payloadString);
+  date = new Date();
+  millisecond = date.getMilliseconds();
+  detik = date.getSeconds();
+  menit = date.getMinutes();
+  jam = date.getHours();
+	console.log(message.destinationName +" : " + message.payloadString +" "+jam+" : "+menit+" : "+detik+"."+millisecond);
 
 	if (message.destinationName == "hbrmoni/heart/pulse/beat" ) {
 		pulse = message.payloadString;
@@ -134,14 +143,14 @@ function MessageArrived(message) {
                   <div class="dashboard-card__card-piece">
                     <div class="status status_success">
                       <div class="status__icon"><span class="fa fa-check"></span></div>
-                      <div class="status__text">Connected</div>
+                      <div id="status_mqtt" class="status__text">Connected</div>
                     </div>
                     <a href="#" class="dashboard-card__link" tabindex="1">Edit<span class="fa fa-angle-right"></span></a>
                   </div>
                 </div>
               </div>
               <div class="dashboard-card alarm">
-                <div class="dashboard-card__title"><span class="fa fa-bell-o"></span>Indikator Jantung</div>
+                <div class="dashboard-card__title"><span class="fa fa-bell-o"></span>WiFi</div>
                 <div class="dashboad-card__content">
                   <div class="dashboard-card__card-piece">
                     <div class="status status_danger">
